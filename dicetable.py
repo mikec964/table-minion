@@ -47,19 +47,20 @@ class DiceTable():
 
 
     def __repr__(self):
-        t = f'{self.name}\n'
+        tResult = ''
         for row in range(len(self.data)):
-            t += f'{self.low[row]},{self.high[row]},{self.data[row]},'
-            t += f'{self.next_table[row]}\n'
-        return t
+            tResult += f'{self.low[row]},{self.high[row]},{self.data[row]},'
+            tResult += f'{self.next_table[row]}\n'
+        return tResult
+
 
     def __str__(self):
-        t = f'===== {self.name} table =====\n'
-        t += '| low | high | result \n'
-        t += '|-----|------|--------\n'
+        tResult = f'===== {self.name} table =====\n'
+        tResult += '| low | high | result\n'
+        tResult += '|-----|------|--------\n'
         for row in range(len(self.data)):
-            t += f'| {self.low[row]} | {self.high[row]} | {self.data[row]}\n'
-        return t
+            tResult += f'| {self.low[row]} | {self.high[row]} | {self.data[row]}\n'
+        return tResult
 
     def lookup_roll(self, dieroll):
         tResult = 'NA'
