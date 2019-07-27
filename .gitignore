@@ -1,0 +1,14 @@
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+*.py[cod]
+testdata/
+rpgtools/static/profile_pics/
+rpgtools/static/pptx
+*keys.yaml
+*keys.yml
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
