@@ -17,11 +17,11 @@ class DiceTable():
             self.high = []
             for row in cr:
                 ranger = row[0].split('-')
-                self.low.append(ranger[0])
+                self.low.append(int(ranger[0]))
                 if len(ranger) > 1:
-                    self.high.append(ranger[1])
+                    self.high.append(int(ranger[1]))
                 else:
-                    self.high.append(ranger[0])
+                    self.high.append(int(ranger[0]))
                 self.data.append(row[1].lstrip())
 
 
@@ -39,7 +39,10 @@ class DiceTable():
             t += f'| {self.low[row]} | {self.high[row]} | {self.data[row]}\n'
         return t
 
-    def lookup(self, dieroll):
-        pass
-
+    def lookup_roll(self, dieroll):
+        result = 'NA'
+        for row in range(len(self.data)):
+            if (dieroll >= self.low[row]) and dieroll <= self.high[row]:
+                result = self.data[row]
+        return result
 
