@@ -25,14 +25,18 @@ class DiceTable():
                 self.data.append(row[1])
 
 
+    def __str__(self):
+        t = f'===== {self.name} table =====\n'
+        t += '| low | high | result \n'
+        t += '|-----|------|--------\n'
+        for row in range(len(self.data)):
+            t += f'| {self.low[row]} | {self.high[row]} | {self.data[row]}\n'
+        return t
+
     def lookup(self, dieroll):
         pass
 
 
 table1 = DiceTable('tables/injury.csv')
-print(f'===== {table1.name} table =====')
-print('| low | high | result ')
-print('|-----|------|--------')
-for row in range(len(table1.data)):
-    print(f'| {table1.low[row]} | {table1.high[row]} | {table1.data[row]}')
+print(table1)
 
