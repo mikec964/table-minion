@@ -22,8 +22,14 @@ class DiceTable():
                     self.high.append(ranger[1])
                 else:
                     self.high.append(ranger[0])
-                self.data.append(row[1])
+                self.data.append(row[1].lstrip())
 
+
+    def __repr__(self):
+        t = f'{self.name}\n'
+        for row in range(len(self.data)):
+            t += f'{self.low[row]},{self.high[row]},{self.data[row]}\n'
+        return t
 
     def __str__(self):
         t = f'===== {self.name} table =====\n'
@@ -36,7 +42,4 @@ class DiceTable():
     def lookup(self, dieroll):
         pass
 
-
-table1 = DiceTable('tables/injury.csv')
-print(table1)
 
