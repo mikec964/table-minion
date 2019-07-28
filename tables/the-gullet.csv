@@ -1,6 +1,6 @@
-range, Danger!, Boating Mod, Damage
-7,Whirlpool, -6, 4d10
-59,Submerged rock, -4, 3d10
-15,Rock, -3, 2d10
-15,Cliff wall,-2,2d10
-4,Waterfall,0,5d10
+%,      Danger!,        Boating,    Damage
+7,      Whirlpool,      -6,         4d10
+59,     Submerged rock, -4,         3d10
+15,     Rock,           -3,         2d10
+15,     Cliff wall,     -2,         2d10
+4,      Waterfall,      +0,         5d10

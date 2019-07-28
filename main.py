@@ -1,9 +1,27 @@
 from dicetable import DiceTable
 
-table1 = DiceTable('tables/injury-h.csv')
-print(repr(table1))
-print(str(table1))
+table_paths = [ 'tables/injury-h.csv',
+                'tables/injury-guts.csv',
+                'tables/injury-head.csv'
+                ]
+die_rolls = [7, 3, 5]
 
-for roll in range(2, 13):
-    print(f'Rolled a {roll}, got {table1.lookup_roll(roll)}')
+table = {}
+t1_name = ''
+for path in table_paths:
+    t = DiceTable(path)
+    table[t.name] = t
+    if t1_name == '':
+        t1_name = t.name
+    print(path)
+    print(str(table[t.name]))
+
+t_name = t1_name
+r_num = 0
+while t_name != 'NA':
+    print('Rolling on', t_name)
+    roll = die_rolls[r_num]
+    r_num += 1
+    print(f'...Got a {roll}: {table[t_name].lookup_roll(roll)[0]}')
+    t_name = table[t_name].lookup_roll(roll)[1]
 

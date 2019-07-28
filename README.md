@@ -7,13 +7,15 @@ Why return an image? Because Roll20 macros can retrieve images from the web, but
 Planned features:
 * Flexible index column
     * [x] Ranges (e.g. 2–5)
-    * [ ] Percentages (e.g. 35)
+    * [ ] Weights (e.g. 35, fraction of index sum)
     * [ ] Min/max ranges (e.g. 3-, 11+)
 * Easy CSV tables
     * [x] White space ignored
     * [ ] Heading row
+    * [ ] Allow commas in results, strip quote marks
 * Results can trigger additional rolls on tables
-    * [ ] Name table to roll
+    * [x] Name table to roll
+    * [ ] Secondary tables can have different ranges
 * Results can have modifiers to additional rolls
 * Tables can have more than one results column
 
