@@ -6,7 +6,7 @@ Why return an image? Because Roll20 macros can retrieve images from the web, but
 
 Planned features:
 * Flexible index column
-    * [x] Ranges (e.g. 2–5)
+    * [x] Ranges (e.g. 2, or 2–5)
     * [ ] Weights (e.g. 35, fraction of index sum)
     * [ ] Min/max ranges (e.g. 3-, 11+)
 * Easy CSV tables
@@ -20,18 +20,20 @@ Planned features:
 * Tables can have more than one results column
 
 Table format:
-# name
-# desc
-indexCol, resultCol
-indexCol, resultCol
+* indexCol, resultCol
+    * indexCol: 2, 2-3, 3-, 10+
+    * resultCol:
+        * string
+        * optional: /rollon(table-name\[, add\[, roll_list\]\])
 
 Query format:
-?table-name
-&showtable=1    # show entire table (else show only result)
-&showroll=1     # show roll with result (else show only result)
-&animate=1      # animate die roll
-&roll<n>=<value>
-&roll<n>=<value>
+    * [ ]   /troll      # table roll service
+    * [ ]   ?table=<tablename>
+    * [ ]   &showtable  # show entire table (else show only result)
+    * [ ]   &showroll   # show roll with result (else show only result)
+    * [ ]   &animate    # animate die roll
+    * [ ]   &rolls=3,2,5    # default roll_list (e.g. 2d6 results)
+    * [ ]   &rolls-b=15,10  # roll_list b. Use a-z. (e.g. 1d20 results)
 
 Site features:
 * Registered users can create and upload tables

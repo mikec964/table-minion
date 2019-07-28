@@ -5,7 +5,7 @@ import os
 class DiceTable():
     ''' Returns results from table based on die roll
 
-    low[row], high[row], result[row]
+    low[row], high[row], data[row], next[row]
     '''
 
     def __init__(self, f_path):
@@ -62,12 +62,21 @@ class DiceTable():
             tResult += f'| {self.low[row]} | {self.high[row]} | {self.data[row]}\n'
         return tResult
 
-    def lookup_roll(self, dieroll):
+    def lookup_result(self, dieroll):
         tResult = 'NA'
         tNext = 'NA'
         for row in range(len(self.data)):
             if (dieroll >= self.low[row]) and dieroll <= self.high[row]:
                 tResult = self.data[row]
                 tNext = self.next_table[row]
-        return [tResult, tNext]
+        return tResult
+
+    def lookup_next(self, dieroll):
+        tResult = 'NA'
+        tNext = 'NA'
+        for row in range(len(self.data)):
+            if (dieroll >= self.low[row]) and dieroll <= self.high[row]:
+                tResult = self.data[row]
+                tNext = self.next_table[row]
+        return tNext
 
