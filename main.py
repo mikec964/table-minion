@@ -9,7 +9,7 @@ def roll_on_tables(first_table, die_rolls,
     while t_name != '':
         if show_table:
             rText += f'Checking {t_name}\n...'
-            table = DiceTable(os.path.join('tables', t_name) + '.csv')
+            table = DiceTable(os.path.join('tests','tables', t_name) + '.csv')
         roll = die_rolls[r_num]
         r_num += 1
         if show_roll:
