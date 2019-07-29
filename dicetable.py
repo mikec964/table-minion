@@ -21,7 +21,7 @@ class DiceTable():
 
         def parse_next_table(command_str):
             tResult = command_str
-            tNext = 'NA'
+            tNext = ''
             n = len('/rollon')
             if '/rollon' in command_str:
                 start = command_str.find('/rollon(')
@@ -63,20 +63,16 @@ class DiceTable():
         return tResult
 
     def lookup_result(self, dieroll):
-        tResult = 'NA'
-        tNext = 'NA'
+        tResult = 'Error: Roll out of range.'
         for row in range(len(self.data)):
             if (dieroll >= self.low[row]) and dieroll <= self.high[row]:
                 tResult = self.data[row]
-                tNext = self.next_table[row]
         return tResult
 
     def lookup_next(self, dieroll):
-        tResult = 'NA'
-        tNext = 'NA'
+        tNext = ''
         for row in range(len(self.data)):
             if (dieroll >= self.low[row]) and dieroll <= self.high[row]:
-                tResult = self.data[row]
                 tNext = self.next_table[row]
         return tNext
 
