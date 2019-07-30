@@ -16,8 +16,14 @@ Planned features:
 * Results can trigger additional rolls on tables
     * [x] Name table to roll
     * [ ] Secondary tables can have different ranges
-* Results can have modifiers to additional rolls
-* Tables can have more than one results column
+* Advanced queries
+    * [ ] Roll on a table multiple times
+    * [ ] Multiply roll by value (e.g. 1d10 * 100 gold)
+    * [ ] Rolls within results (e.g. d6 rats)
+    * [ ] Results can have modifiers to additional rolls
+    * [ ] Tables can have more than one results column
+    * [ ] Combine results into sentences
+    * [ ] Return image linked by URL in the result
 
 Table format:
 * indexCol, resultCol
