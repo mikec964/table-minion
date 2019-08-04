@@ -16,13 +16,13 @@ class DiceTable():
         rText = ''
         while t_name != '':
             table = DiceTable(os.path.join('tests','tables', t_name) + '.csv')
-            if show_table:
-                rText += f'Checking {t_name}\n...'
             roll = die_rolls[r_num]
             r_num += 1
-            if show_roll:
-                rText += f'Rolled {roll}: '
-            rText += f'{table.lookup_result(roll)}\n'
+            if show_roll and show_table:
+                rText += f'Rolled {roll} on {t_name}:\n'
+            if not show_roll and show_table:
+                rText += f'Rolled on {t_name}\n'
+            rText += f'{table.lookup_result(roll)}\n\n'
             t_name = table.lookup_next(roll)
         return rText
 
